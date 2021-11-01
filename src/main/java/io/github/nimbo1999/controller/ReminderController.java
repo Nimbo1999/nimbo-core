@@ -2,6 +2,8 @@ package io.github.nimbo1999.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +23,7 @@ public class ReminderController {
     private ReminderService service;
 
     @PostMapping
-    public Reminder postReminder(@RequestBody CreateReminderVO reminder) {
+    public Reminder postReminder(@RequestBody @Valid CreateReminderVO reminder) {
         return service.saveReminder(reminder);
     }
 
