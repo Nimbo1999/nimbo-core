@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,8 +30,21 @@ public class Reminder {
     private String title;
     @Column
     private String content;
-    @Column
-    private Instant created_at;
-    @Column
-    private Instant updated_at;
+
+    @JsonProperty("isActive")
+    @Column(name = "isactive")
+    private boolean isActive;
+
+    @JsonProperty("isDeleted")
+    @Column(name = "isdeleted")
+    private boolean isDeleted;
+
+    @JsonProperty("isProtected")
+    @Column(name = "isprotected")
+    private boolean isProtected;
+
+    @Column(name = "created_at")
+    private Instant createdAt;
+    @Column(name = "updated_at")
+    private Instant updatedAt;
 }

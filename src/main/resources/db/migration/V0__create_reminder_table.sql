@@ -4,6 +4,9 @@ CREATE TABLE reminder (
 	id BIGINT NOT NULL DEFAULT nextval('reminder_id_sq'::regclass),
 	title varchar(100) NOT NULL,
 	content TEXT NOT NULL,
+    isactive BOOLEAN DEFAULT true,
+    isdeleted BOOLEAN DEFAULT false,
+    isprotected BOOLEAN DEFAULT false,
 	created_at TIMESTAMP NOT NULL,
 	updated_at TIMESTAMP NOT NULL,
 	CONSTRAINT reminder_pkey PRIMARY KEY (id)

@@ -13,8 +13,10 @@ public class ReminderAdapter {
         return Reminder.builder()
             .title(reminderVO.getTitle())
             .content(reminderVO.getContent())
-            .created_at(instantNow)
-            .updated_at(instantNow)
+            .isActive(reminderVO.isActive())
+            .isProtected(reminderVO.isProtected())
+            .createdAt(instantNow)
+            .updatedAt(instantNow)
             .build();
     }
 

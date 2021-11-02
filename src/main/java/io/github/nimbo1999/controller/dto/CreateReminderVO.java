@@ -3,6 +3,8 @@ package io.github.nimbo1999.controller.dto;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,4 +16,8 @@ public class CreateReminderVO {
     private String title;
     @NotEmpty(message = "Field content must not be empty")
     private String content;
+    @JsonProperty("isActive")
+    private boolean isActive = true;
+    @JsonProperty("isProtected")
+    private boolean isProtected;
 }
