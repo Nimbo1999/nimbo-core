@@ -1,5 +1,7 @@
+CREATE SEQUENCE IF NOT EXISTS reminder_id_sq AS BIGINT;
+
 CREATE TABLE reminder (
-	id uuid NOT NULL DEFAULT gen_random_uuid(),
+	id BIGINT NOT NULL DEFAULT nextval('reminder_id_sq'::regclass),
 	title varchar(100) NOT NULL,
 	content TEXT NOT NULL,
 	created_at TIMESTAMP NOT NULL,
