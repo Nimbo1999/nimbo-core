@@ -13,7 +13,7 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 public class ReminderService {
-    
+
     private ReminderRepository repository;
 
     public Reminder saveReminder(CreateReminderVO reminderVo) {

@@ -23,8 +23,8 @@ public class ReminderController {
     private ReminderService service;
 
     @PostMapping
-    public Reminder postReminder(@RequestBody @Valid CreateReminderVO reminder) {
-        return service.saveReminder(reminder);
+    public Reminder postReminder(@RequestBody @Valid CreateReminderVO reminderVo) {
+        return service.saveReminder(reminderVo);
     }
 
     @GetMapping
